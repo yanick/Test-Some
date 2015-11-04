@@ -1,5 +1,20 @@
 Revision history for Test-Some
 
 {{$NEXT}}
+  [ API CHANGES ]
 
+  [ BUG FIXES ]
+
+  [ DOCUMENTATION ]
+
+  [ ENHANCEMENTS ]
+
+  [ NEW FEATURES ]
+
+  [ STATISTICS ]
+
+0.0.1 2015-11-04
   - First version, unleashed on an unsuspecting world.
+
+  [ STATISTICS ]
+    - code churn: 2 files changed, 30 insertions(+)
