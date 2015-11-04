@@ -190,3 +190,9 @@ sub _subtest {
 }
 
 1;
+
+__END__
+
+=head1 SEE ALSO
+
+* L<http://techblog.babyl.ca/entry/test-some> - introduction blog entry
