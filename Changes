@@ -1,15 +1,8 @@
 Revision history for Test-Some
 
 {{$NEXT}}
-  [ API CHANGES ]
-
-  [ BUG FIXES ]
-
-  [ DOCUMENTATION ]
-
-  [ ENHANCEMENTS ]
-
-  [ NEW FEATURES ]
+    - Obfuscate 'package Test::More' so CPAN doesn't think we're claiming
+        the namespace.
 
   [ STATISTICS ]
 

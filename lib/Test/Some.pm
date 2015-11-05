@@ -116,7 +116,8 @@ sub import {
     state $first_time = 1;
 
     eval <<"END" if $first_time;
-        package Test::More;
+        package 
+            Test::More;
         use Class::Method::Modifiers;
         around subtest => sub { Test::Some::_subtest( \@_ ) };
 END
