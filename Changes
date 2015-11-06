@@ -1,6 +1,9 @@
 Revision history for Test-Some
 
 {{$NEXT}}
+    - Class::Method::Modifiers wasn't picked as one of the dependencies by
+      dzilla.
+
   [ API CHANGES ]
 
   [ BUG FIXES ]
