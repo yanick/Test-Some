@@ -113,16 +113,23 @@ sub import {
 
     _groom_filter($caller,$_) for @filters;
 
-    state $first_time = 1;
-
-    eval <<"END" if $first_time;
-        package 
-            Test::More;
+    eval <<"END_EVAL";
+        package $caller; 
+        use Test::More;
         use Class::Method::Modifiers;
-        around subtest => sub { Test::Some::_subtest( \@_ ) };
-END
 
-    $first_time = 0;
+        # needs to be after Test::More put
+        # its own 'subtest' in there,
+        # hence the INIT
+        INIT {
+            around subtest => sub {
+                Test::Some::_subtest(\@_);
+            }
+        }
+END_EVAL
+
+    die $@ if $@;
+
 }
 
 sub _groom_filter { 
