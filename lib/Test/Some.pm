@@ -124,21 +124,20 @@ sub import {
     _groom_filter($caller,$_) for @filters;
 
     eval <<"END_EVAL";
-        package $caller; 
-        use Test::More;
-        use Class::Method::Modifiers;
+        package $caller;
 
-        # needs to be after Test::More put
-        # its own 'subtest' in there,
-        # hence the INIT
+        # delaying stuff to INIT 
+        # because Test::Some can be loaded before Test::More
         INIT {
-            around subtest => sub {
-                Test::Some::_subtest(\@_);
-            }
+            my \$original_subtest = $caller->can('subtest')
+                or die "no function 'subtest' found in package $caller. Forgot to import Test::More?";
+
+            no warnings 'redefine';
+            no strict 'refs';
+            *{"${caller}::subtest"} = sub { Test::Some::_subtest( \$original_subtest, \@_ ) };
         }
 END_EVAL
 
-    die $@ if $@;
 
 }
 
@@ -194,7 +193,7 @@ sub _should_be_skipped {
 
 sub _subtest {
     my( $orig, $name, $code, @tags ) = @_;
-    my $caller = caller 3;
+    my $caller = caller;
 
     if( _should_be_skipped($caller,$name,@tags) ) {
         return if $BYPASS;

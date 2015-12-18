@@ -8,6 +8,8 @@ Revision history for Test-Some
   [ DOCUMENTATION ]
 
   [ ENHANCEMENTS ]
+  - Take in suggestions from Exodist to clean up the BEGIN dance.
+        (GH#4, Exodist)
 
   [ NEW FEATURES ]
 
