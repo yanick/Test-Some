@@ -1,21 +1,14 @@
 Revision history for Test-Some
 
-{{$NEXT}}
-  [ API CHANGES ]
-
-  [ BUG FIXES ]
-
-  [ DOCUMENTATION ]
-
+0.1.0 2015-12-18
   [ ENHANCEMENTS ]
-  - The module doesn't monkeypatch Test::More::subtest anymore, but just wrap
-    it within the namespace it's invoked in. (GH#1)
-  - The whitelist of tests to run can now be passed via the env variable
-    TEST_SOME. (GH#2)
-
-  [ NEW FEATURES ]
+    - The module doesn't monkeypatch Test::More::subtest anymore, but just
+      wrap it within the namespace it's invoked in. (GH#1)
+    - The whitelist of tests to run can now be passed via the env variable
+      TEST_SOME. (GH#2)
 
   [ STATISTICS ]
+    - code churn: 5 files changed, 85 insertions(+), 14 deletions(-)
 
 0.0.3 2015-11-05
   - Class::Method::Modifiers wasn't picked as one of the dependencies by
