@@ -8,6 +8,8 @@ Revision history for Test-Some
   [ DOCUMENTATION ]
 
   [ ENHANCEMENTS ]
+  - The module doesn't monkeypatch Test::More::subtest anymore, but just wrap
+    it within the namespace it's invoked in. (GH#1)
 
   [ NEW FEATURES ]
 
