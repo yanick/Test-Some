@@ -10,6 +10,8 @@ Revision history for Test-Some
   [ ENHANCEMENTS ]
   - The module doesn't monkeypatch Test::More::subtest anymore, but just wrap
     it within the namespace it's invoked in. (GH#1)
+  - The whitelist of tests to run can now be passed via the env variable
+    TEST_SOME. (GH#2)
 
   [ NEW FEATURES ]
 

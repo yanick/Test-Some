@@ -22,10 +22,17 @@ The module declaration takes a whitelist of the subtests we want to run.
 Any subtest that doesn't match any of the whitelist
 items will be skipped (or potentially bypassed).
 
-The test files don't even need to be modified, as t
-he module can also be invoked from the command-line. E.g.,
+The test files don't even need to be modified, as 
+the module can also be invoked from the command-line. E.g.,
 
-    perl -MTest::Some=foo t/tests.t
+    $ perl -MTest::Some=foo t/tests.t
+
+If no argument is given to the module declaration, the environment
+variable C<TEST_SOME> will be used as the defaults. For example, this 
+is equivalent to the example above:
+
+    $ export TEST_SOME=foo
+    $ perl -MTest::Some t/tests.t
 
 =head2 Whitelist items
 
@@ -110,6 +117,9 @@ our $BYPASS = 0;
 sub import {
     my $caller = caller;
     my(undef,@filters) = @_;
+
+    no warnings 'uninitialized';
+    @filters = split ',', $ENV{TEST_SOME} unless @filters;
 
     _groom_filter($caller,$_) for @filters;
 
