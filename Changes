@@ -1,19 +1,12 @@
 Revision history for Test-Some
 
-{{$NEXT}}
-  [ API CHANGES ]
-
-  [ BUG FIXES ]
-
-  [ DOCUMENTATION ]
-
+0.2.0 2015-12-19
   [ ENHANCEMENTS ]
-  - Take in suggestions from Exodist to clean up the BEGIN dance.
-        (GH#4, Exodist)
-
-  [ NEW FEATURES ]
+    - Take in suggestions from Exodist to clean up the BEGIN dance. (GH#4,
+      Exodist)
 
   [ STATISTICS ]
+    - code churn: 3 files changed, 22 insertions(+), 18 deletions(-)
 
 0.1.0 2015-12-18
   [ ENHANCEMENTS ]
