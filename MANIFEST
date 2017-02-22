@@ -6,7 +6,6 @@ MANIFEST
 META.json
 META.yml
 Makefile.PL
-README
 README.mkdn
 SIGNATURE
 cpanfile
@@ -23,5 +22,4 @@ t/negation.t
 t/no-monkeypatch.t
 t/regex.t
 t/sub.t
-xt/release/pause-permissions.t
 xt/release/unused-vars.t

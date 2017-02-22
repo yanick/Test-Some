@@ -12,7 +12,8 @@ BEGIN {
     is $original => refaddr \&Test::More::subtest, "original is T::M, straight up";
 }
 
-use Test::Some;
+# if there are no options, subtest is not replaced
+use Test::Some '!foo';
 
 isnt refaddr \&subtest => $original, "subtest replaced locally";
 is refaddr \&Test::More::subtest => $original, "but NOT globally";
