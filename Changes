@@ -1,8 +1,6 @@
 Revision history for Test-Some
 
 {{$NEXT}}
-    - Various refactoring.
-
   [ API CHANGES ]
 
   [ BUG FIXES ]
@@ -14,6 +12,12 @@ Revision history for Test-Some
   [ NEW FEATURES ]
 
   [ STATISTICS ]
+
+0.2.1 2017-02-22
+  - Various refactoring.
+
+  [ STATISTICS ]
+    - code churn: 6 files changed, 165 insertions(+), 154 deletions(-)
 
 0.2.0 2015-12-19
   [ ENHANCEMENTS ]
